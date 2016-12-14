@@ -1,5 +1,7 @@
+#!/usr/bin/python
+
 from sys import exit
-from cifrado_cesar import *
+from cifrados import *
 
 def menu_entrada():
     print '------Welcome to de-cifer-machine!!------\n'
@@ -9,17 +11,18 @@ def menu_entrada():
     print '-(3) show all options of a descifer in cesar'
     print '-(4) show all options of a cifer in cesar'
     print '-(5) reverse text'
-    print '-(6) exit'
+    print '-(6) change the letters in the word'
+    print '-(7) exit'
 
     option = int(input('> '))
 
-    if option <= 6 or option >= 1:
-    
+    if option <= 7 or option >= 1:
+        clase = cifrado_cesar()
+
         if option == 1:
             palabra_cifrada = raw_input("> Introduce the cifer word: ")
             cantidad_a_mover = int(input("> Tell me the number of characters: "))
 
-            clase = cifrado_cesar()
             print '> ' + clase.cifrador_en_cesar(palabra_cifrada, cantidad_a_mover)
 
             loop()
@@ -28,7 +31,6 @@ def menu_entrada():
             palabra_cifrada = raw_input("> Introduce the word that do you want to cifer: ")
             cantidad_a_mover = int(input("> Tell me the number of characters: "))
 
-            clase = cifrado_cesar()
             print '> ' + clase.cifrador_en_cesar(palabra_cifrada, cantidad_a_mover)
 
             loop()
@@ -36,7 +38,6 @@ def menu_entrada():
         if option == 3:
             palabra_cifrada = raw_input("> Introduce the word that do you want to cifer: ")
 
-            clase = cifrado_cesar()
             for i in range(0, 26):
                 print '> ' + clase.cifrador_en_cesar(palabra_cifrada, i)
 
@@ -45,7 +46,6 @@ def menu_entrada():
         if option == 4:
             palabra_cifrada = raw_input("> Introduce the word that do you want to decifer: ")
 
-            clase = cifrado_cesar()
             for i in range(0, 26):
                 print '> ' + clase.cifrador_en_cesar(palabra_cifrada, i)
 
@@ -54,13 +54,18 @@ def menu_entrada():
                 
         if option == 5:
             mirror = raw_input("> Introduce the word do you want to reverse: ")
-            clase = cifrado_cesar()
-
+            
             print '> ' + clase.reversar(mirror)
 
             loop()
-                
+
+
         if option == 6:
+            print '-to view all comands whrite: comands-'
+            cadena_para_cambiar = raw_input("> Introduce the word do you want to reverse: ")
+            clase.cambio_letras(cadena_para_cambiar)
+        
+        if option == 7:
             exit()
                 
     else:
