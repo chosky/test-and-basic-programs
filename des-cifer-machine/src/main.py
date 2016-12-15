@@ -40,31 +40,27 @@ def menu_entrada():
 
             for i in range(0, 26):
                 print '> ' + clase.cifrador_en_cesar(palabra_cifrada, i)
-
             loop()
             
         if option == 4:
             palabra_cifrada = raw_input("> Introduce the word that do you want to decifer: ")
-
             for i in range(0, 26):
                 print '> ' + clase.cifrador_en_cesar(palabra_cifrada, i)
-
             loop()
         
                 
         if option == 5:
             mirror = raw_input("> Introduce the word do you want to reverse: ")
-            
             print '> ' + clase.reversar(mirror)
-
             loop()
 
 
         if option == 6:
-            print '-to view all comands whrite: comands-'
-            cadena_para_cambiar = raw_input("> Introduce the word do you want to reverse: ")
+            print '-to view all comands whrite: comands()-'
+            cadena_para_cambiar = raw_input("> Introduce the word do you want to change the letters: ")
             clase.cambio_letras(cadena_para_cambiar)
-        
+            loop()
+            
         if option == 7:
             exit()
                 
@@ -94,7 +90,5 @@ def loop():
         print '> that number doesn\'t a option.'
         loop()
 
-
-
     
-menu_entrada()    
+menu_entrada()
