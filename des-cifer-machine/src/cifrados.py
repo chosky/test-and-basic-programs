@@ -29,14 +29,16 @@ class cifrado_cesar(object):
     
     #Metodo para revertir una palabra
     def reversar(self, mirror):
-        normal = []
+        return mirror[::-1]
+        #algoritm
+        """normal = []
         i = len(mirror)
 
         while i:
             i -= 1
             normal.append(mirror[i])
 
-        return ''.join(normal)
+        return ''.join(normal)"""
 
 
 
